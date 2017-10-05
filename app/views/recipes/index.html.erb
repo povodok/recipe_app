@@ -15,9 +15,10 @@
   <tbody>
     <% @recipes.each do |recipe| %>
       <tr>
+        <td><%= image_tag recipe.image.url(:thumb) %></td>
         <td><%= recipe.name %></td>
-        <td><%= recipe.description %></td>
-        <td><%= recipe.cooking_process %></td>
+        <td><%= recipe.description.html_safe %></td>
+        <td><%= recipe.cooking_process.html_safe %></td>
         <td><%= link_to 'Show', recipe %></td>
         <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
         <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
