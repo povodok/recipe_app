@@ -16,4 +16,5 @@
 //= require popper
 //= require bootstrap-sprockets
 //= require holderjs
+//= require trix
 //= require_tree .
