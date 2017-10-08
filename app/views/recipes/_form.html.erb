@@ -1,4 +1,4 @@
-<%= form_with(model: recipe, local: true) do |form| %>
+<%= nested_form_for @recipe do |form| %>
   <% if recipe.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(recipe.errors.count, "error") %> prohibited this recipe from being saved:</h2>
@@ -25,6 +25,14 @@
     <%= form.label :description %>
     <%= form.trix_editor :description, id: :recipe_description %>
   </div>
+
+  <%= form.fields_for :recipe_ingredients do |ri| %>
+    Ingredient<%= text_field_tag 'name' %>
+    <%= ri.hidden_field :ingredient_id %>
+    Amount: <%= ri.text_field :amount %>
+    <%= ri.link_to_remove "Remove" %>
+  <% end %>
+  <%= form.link_to_add "Add an ingredient", :recipe_ingredients %>
 
   <div class="field">
     <%= form.label :cooking_process %>

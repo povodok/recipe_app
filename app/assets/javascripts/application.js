@@ -17,4 +17,5 @@
 //= require bootstrap-sprockets
 //= require holderjs
 //= require trix
+//= require jquery_nested_form
 //= require_tree .
