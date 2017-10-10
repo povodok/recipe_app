@@ -6,6 +6,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'autocomplete-rails.js' %>
   </head>
 
   <body>
@@ -14,8 +15,5 @@
       <%= yield %>
     <%= render 'layouts/footer' %>
     </div>
-
-    <script src="/js/jquery.autocomplete.min.js"></script>
-    <script src="/js/search_autocomplete.js"></script>
   </body>
 </html>

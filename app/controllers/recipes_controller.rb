@@ -1,10 +1,7 @@
 class RecipesController < ApplicationController
   before_action :set_recipe, only: [:show, :edit, :update, :destroy]
 
-  def autocomplete
-    @ingredients = Ingredient.autocomplete_search(params[:query])
-    render json: { suggestions: @ingredients.pluck(:name) }
-  end
+  autocomplete :ingredient, :name
   # GET /recipes
   # GET /recipes.json
   def index

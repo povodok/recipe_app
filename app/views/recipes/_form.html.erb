@@ -27,7 +27,7 @@
   </div>
 
   <%= form.fields_for :recipe_ingredients do |ri| %>
-    Ingredients: <%= text_field_tag :q, params[:q], id: 'search_query' %>
+    Ingredients: <%= form.autocomplete_field :ingredient_ids, autocomplete_ingredient_name_recipes_path %>
     <%= ri.text_field :ingredient_id %>
     Amount: <%= ri.text_field :amount %>
     <%= ri.link_to_remove "Remove" %>

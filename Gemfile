@@ -18,6 +18,8 @@ gem 'puma', '~> 3.7'
 gem 'sass-rails', '~> 5.0'
 gem 'trix'
 gem "paperclip", "~> 5.0.0"
+gem 'jquery-ui-rails'
+gem 'rails-jquery-autocomplete'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
