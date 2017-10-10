@@ -27,8 +27,8 @@
   </div>
 
   <%= form.fields_for :recipe_ingredients do |ri| %>
-    Ingredient<%= text_field_tag 'name' %>
-    <%= ri.hidden_field :ingredient_id %>
+    Ingredients: <%= text_field_tag :q, params[:q], id: 'search_query' %>
+    <%= ri.text_field :ingredient_id %>
     Amount: <%= ri.text_field :amount %>
     <%= ri.link_to_remove "Remove" %>
   <% end %>

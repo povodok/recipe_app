@@ -41,5 +41,4 @@ ActiveRecord::Schema.define(version: 20171005105401) do
     t.integer "image_file_size"
     t.datetime "image_updated_at"
   end
-
 end
