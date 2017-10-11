@@ -12,6 +12,21 @@
   <%= @recipe.description.html_safe %>
 </p>
 
+<strong>Recipe ingredient:</strong>
+<div class="container">
+  <div class="row">
+    <div class="col-md-1">
+      <% @recipe.ingredients.each do |i| %>
+        <p><%= i.name %></p>
+      <% end %>
+    </div>
+    <div class="col-md-1">
+      <% @recipe.recipe_ingredients.each do |ri| %>
+        <p><%= ri.amount %></p>
+      <% end %>
+    </div>
+  </div>
+</div>
 <p>
   <strong>Cooking process:</strong>
   <%= @recipe.cooking_process.html_safe %>

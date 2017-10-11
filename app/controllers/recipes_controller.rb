@@ -1,7 +1,7 @@
 class RecipesController < ApplicationController
   before_action :set_recipe, only: [:show, :edit, :update, :destroy]
 
-  autocomplete :ingredient, :name, :display_value => :funky_method
+  autocomplete :ingredient, :name
   # GET /recipes
   # GET /recipes.json
   def index
