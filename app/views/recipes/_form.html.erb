@@ -27,8 +27,8 @@
   </div>
 
   <%= form.fields_for :recipe_ingredients do |ri| %>
-    Ingredient: <%= form.autocomplete_field :ingredient_ids, autocomplete_ingredient_name_recipes_path %>
-    <%= ri.text_field :ingredient_id %>
+    Ingredient: <%= text_field_tag :autocomplete_ingredients, ri.object.try(:name), class: 'ingredient-autocomplete' %>
+    <%= ri.hidden_field :ingredient_id, class: 'ingredient-id' %>
     Amount: <%= ri.text_field :amount %>
     <%= ri.link_to_remove "Remove" %>
   <% end %>

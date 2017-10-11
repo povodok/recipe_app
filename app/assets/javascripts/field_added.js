@@ -1,8 +1,12 @@
 $(document).on('nested:fieldAdded', function(event){
-  // this field was just inserted into your form
-  var field = event.field;
-  // it's a jQuery object already! Now you can find date input
-  var dateField = field.find('.date');
-  // and activate datepicker on it
-  dateField.autocomplete();
+  var field = event.field.find('.ingredient-autocomplete'),
+      hiddenField = event.field.find('.ingredient-id')
+
+  $(field).autocomplete({
+    source: '/recipes/autocomplete_ingredient_name',
+
+    select: function(e, ui) {
+      hiddenField.val(ui.item.id)
+    }
+  })
 })
