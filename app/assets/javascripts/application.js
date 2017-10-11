@@ -10,6 +10,8 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require jquery
+//= require jquery_ujs
 //= require rails-ujs
 //= require turbolinks
 //= require popper
@@ -17,8 +19,6 @@
 //= require holderjs
 //= require trix
 //= require jquery_nested_form
-//= require jquery
-//= require jquery_ujs
 //= require jquery-ui/widgets/autocomplete
 //= require autocomplete-rails
 //= require_tree .

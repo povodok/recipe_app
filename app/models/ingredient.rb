@@ -3,4 +3,8 @@ class Ingredient < ApplicationRecord
   has_many :recipes, through: :recipe_ingredients
 
   accepts_nested_attributes_for :recipe_ingredients, allow_destroy: true
+
+  def funky_method
+    "#{self.name}  (#{self.id})"
+  end
 end
