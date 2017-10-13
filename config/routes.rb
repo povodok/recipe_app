@@ -5,4 +5,5 @@ Rails.application.routes.draw do
     get :autocomplete_ingredient_name, :on => :collection
   end
   resources :ingredients
+  resources :categories
 end

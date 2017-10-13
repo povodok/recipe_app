@@ -2,28 +2,21 @@ class RecipesController < ApplicationController
   before_action :set_recipe, only: [:show, :edit, :update, :destroy]
 
   autocomplete :ingredient, :name
-  # GET /recipes
-  # GET /recipes.json
+
   def index
     @recipes = Recipe.all
   end
 
-  # GET /recipes/1
-  # GET /recipes/1.json
   def show
   end
 
-  # GET /recipes/new
   def new
     @recipe = Recipe.new
   end
 
-  # GET /recipes/1/edit
   def edit
   end
 
-  # POST /recipes
-  # POST /recipes.json
   def create
     @recipe = Recipe.new(recipe_params)
 
@@ -52,8 +45,6 @@ class RecipesController < ApplicationController
     end
   end
 
-  # DELETE /recipes/1
-  # DELETE /recipes/1.json
   def destroy
     @recipe.destroy
     respond_to do |format|
@@ -70,7 +61,7 @@ class RecipesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def recipe_params
-      params.require(:recipe).permit(:name, :description, :cooking_process, :image,
+      params.require(:recipe).permit(:name, :description, :cooking_process, :image, category_ids: [],
                                     recipe_ingredients_attributes: [:ingredient_id, :amount, :id, :_destroy])
     end
 end

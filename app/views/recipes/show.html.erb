@@ -2,6 +2,9 @@
 
 <%= image_tag @recipe.image.url(:medium) %>
 
+<% @recipe.recipe_categories.each do |rc| %>
+  <%= rc.category.name %>
+<% end %>
 <p>
   <strong>Name:</strong>
   <%= @recipe.name %>
