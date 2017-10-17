@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @category.name %>
+</p>
+
+<% @category.recipe_categories.each do |rc| %>
+  <%= image_tag rc.recipe.image.url(:medium) %>
+  <%= rc.recipe.description.html_safe %><br>
+  <%= link_to rc.recipe.try(:name) , recipe_url(rc.recipe.try(:id)) %> <br>
+<% end %>
+
+<%= link_to 'Edit', edit_category_path(@category) %> |
+<%= link_to 'Back', categories_path %>
