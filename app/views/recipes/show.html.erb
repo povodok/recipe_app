@@ -1,31 +1,30 @@
 <p id="notice"><%= notice %></p>
 
-<%= image_tag @recipe.image.url(:medium) %>
+<h3><%= @recipe.name %></h3>
+<div class="row">
+  <div class="col-md-4">
+    <%= image_tag @recipe.image.url(:medium) %>
+  </div>
+  <div class="col-md-8">
+    <%= sanitize @recipe.description %>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-4">
+  <strong>Recipe ingredients:</strong>
+    <% @recipe.recipe_ingredients.each do |ri| %>
+      <p>
+      <%= ri.ingredient.name %>
+      -
+      <%= ri.amount %>
+      </p>
+    <% end %>
 
-<% @recipe.recipe_categories.each do |rc| %>
-  <%= rc.category.name %>
-<% end %>
-<p>
-  <strong>Name:</strong>
-  <%= @recipe.name %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @recipe.description.html_safe %>
-</p>
-
-<strong>Recipe ingredient:</strong>
-<% @recipe.recipe_ingredients.each do |ri| %>
-  <p>
-  <%= ri.ingredient.name %>
-  <%= ri.amount %>
-  </p>
-<% end %>
-<p>
-  <strong>Cooking process:</strong>
-  <%= @recipe.cooking_process.html_safe %>
-</p>
-
-<%= link_to 'Edit', edit_recipe_path(@recipe) %> |
-<%= link_to 'Back', recipes_path %>
+    <%= link_to 'Edit', edit_recipe_path(@recipe) %> |
+    <%= link_to 'Back', recipes_path %>
+  </div>
+  <div class="col-md-8">
+    <strong>Cooking process:</strong><br>
+      <%= sanitize @recipe.cooking_process %>
+  </div>
+</div>

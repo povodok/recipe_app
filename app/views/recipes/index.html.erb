@@ -3,23 +3,12 @@
 <h1>Recipes</h1>
 
 <table>
-  <thead>
-    <tr>
-      <th>Image</th>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Cooking process</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
   <tbody>
     <% @recipes.each do |recipe| %>
       <tr>
         <td><%= image_tag recipe.image.url(:thumb) %></td>
         <td><%= recipe.name %></td>
-        <td><%= recipe.description.html_safe %></td>
-        <td><%= recipe.cooking_process.html_safe %></td>
+        <td><%= sanitize recipe.description %></td>
         <td><%= link_to 'Show', recipe %></td>
         <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
         <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
