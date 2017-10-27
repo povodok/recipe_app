@@ -5,6 +5,8 @@
   <%= @ingredient.name %>
 </p>
 
+<%= image_tag @ingredient.image.url(:medium) %>
+
 <p>
   <strong>Description:</strong>
   <%= @ingredient.description %>

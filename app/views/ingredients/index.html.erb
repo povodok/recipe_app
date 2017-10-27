@@ -14,6 +14,7 @@
   <tbody>
     <% @ingredients.each do |ingredient| %>
       <tr>
+        <td><%= image_tag ingredient.image.url(:thumb) %></td>
         <td><%= ingredient.name %></td>
         <td><%= ingredient.description %></td>
         <td><%= link_to 'Show', ingredient %></td>
